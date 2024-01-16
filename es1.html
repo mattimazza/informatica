@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juve Merda Counter</title>
+</head>
+<body>
+
+<button onclick="stampaNumeri()">Clicca per stampare</button>
+
+<div id="output"></div>
+
+<script>
+    function stampaNumeri() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "";  // Pulisce l'output precedente
+
+        for (let i = 1; i <= 100; i++) {
+            outputDiv.innerHTML += "juve merda " + i + "<br>";
+        }
+    }
+</script>
+
+</body>
+</html>
