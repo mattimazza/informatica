@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore e Tabellina</title>
+</head>
+<body>
+
+<h1>Contatore e Tabellina</h1>
+<p id="counter"></p>
+<pre id="tabellina"></pre>
+
+<script>
+    var count = 1;
+
+    function updateCounter() {
+        document.getElementById('counter').innerText = 'Contatore: ' + count;
+        if (count === 5) {
+            printTabellina();
+        } else {
+            count++;
+        }
+    }
+
+    function printTabellina() {
+        var tabellinaText = '';
+        for (var i = 1; i <= 10; i++) {
+            tabellinaText += i + '\n';
+        }
+        document.getElementById('tabellina').innerText = 'Tabellina:\n' + tabellinaText;
+    }
+
+    setInterval(updateCounter, 1000);
+</script>
+
+</body>
+</html>
