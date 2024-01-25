@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creazione dinamica di div</title>
+<style>
+    .quadrato {
+        width: 10px;
+        height: 10px;
+        border: 1px solid black;
+        display: inline-block;
+        margin-right: 5px;
+    }
+</style>
+</head>
+<body>
+
+<label for="numeroDiv">Inserisci il numero di div da creare:</label>
+<input type="number" id="numeroDiv" min="1" max="100">
+<button onclick="creaDiv()">Crea Div</button>
+
+<script>
+function creaDiv() {
+    var numDiv = document.getElementById("numeroDiv").value;
+
+    
+    if (numDiv < 1 || numDiv > 100 || isNaN(numDiv)) {
+        alert("Inserisci un numero valido (da 1 a 100).");
+        return;
+    }
+
+    var container = document.getElementById("container");
+    container.innerHTML = ""; 
+
+    
+    for (var i = 0; i < numDiv; i++) {
+        var div = document.createElement("div");
+        div.className = "quadrato";
+      
+        div.style.backgroundColor = getRandomColor();
+        container.appendChild(div);
+    }
+}
+
+
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+</script>
+
+<div id="container"></div>
+
+</body>
+</html>
