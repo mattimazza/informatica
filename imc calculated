@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>IMC Calculator</title>
+</head>
+
+<body>
+  <h1>Calcola l'Indice di Massa Corporea (IMC)</h1>
+  <label for="peso">Inserisci il tuo peso in kg:</label>
+  <input type="number" id="peso"><br>
+ 
+  <label for="altezza">Inserisci la tua altezza in metri:</label>
+  <input type="number" id="altezza"><br>
+ 
+  <button onclick="calculateIMC()">Calcola IMC</button>
+ 
+  <p id="result"></p>
+ 
+  <script>
+    function calculateIMC() {
+      const peso = document.getElementById('weight').value;
+      const altezza = document.getElementById('altezza').value;
+      const imc = weight / (height * height);
+     
+      let classification;
+      if (imc < 18.5) {
+        classification = 'Sottopeso';
+      } else if (imc >= 18.5 && imc < 25) {
+        classification = 'Normopeso';
+      } else if (imc >= 25 && imc < 30) {
+        classification = 'Sovrappeso';
+      } else {
+        classification = 'Obesità';
+      }
+     
+      document.getElementById('result').textContent = `Il tuo IMC è ${imc.toFixed(2)} e sei classificato come ${classification}`;
+    }
+  </script>
+</body>
